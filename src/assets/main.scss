@@ -4,6 +4,12 @@
 
 .main-container {
   max-width: 1760px;
-  padding: 0 15px;
   margin: 0 auto;
+  @media (max-width: 1625px) {
+    max-width: 1560px;
+  }
+}
+
+body {
+  background-color: #F5F5F6;
 }
