@@ -16,6 +16,56 @@ const newProducts = ref([
     price: '4 200 740 so‘m',
     id: 1,
   },
+  {
+    img: '../assest/img/new/2.png',
+    type: 'Новинки',
+    title: 'Відро Gemini 16л сіре Muller',
+    review: 7,
+    rating: 4.3,
+    salePrice: '450 000 so‘m',
+    // price: '4 200 740 so‘m',
+    id: 2,
+  },
+  {
+    img: '../assest/img/new/3.png',
+    type: 'Новинки',
+    title: 'Мусорниця Taurus 40 1x16 + 1x8л сіра',
+    review: 12,
+    rating: 4.1,
+    salePrice: '1 500 000 so‘m',
+    // price: '4 200 740 so‘m',
+    id: 3,
+  },
+  {
+    img: '../assest/img/new/3.png',
+    type: 'Новинки',
+    title: 'Кошик центральний раттан 764-864мм Muller',
+    review: 4,
+    rating: 4.5,
+    salePrice: '800 740 so‘m',
+    // price: '4 200 740 so‘m',
+    id: 4,
+  },
+  {
+    img: '../assest/img/new/3.png',
+    type: 'Новинки',
+    title: 'Корзина центральная с организацией 664-764мм Muller',
+    review: 20,
+    rating: 4.5,
+    salePrice: '4 000 740 so‘m',
+    price: '4 200 740 so‘m',
+    id: 5,
+  },
+  {
+    img: '../assest/img/new/3.png',
+    type: 'Новинки',
+    title: 'Кошик центральний раттан 764-864мм Muller',
+    review: 4,
+    rating: 4.5,
+    salePrice: '4 000 740 so‘m',
+    // price: '4 200 740 so‘m',
+    id: 6,
+  },
 ])
 
 </script>
@@ -23,16 +73,16 @@ const newProducts = ref([
 <template>
   <div class="news-blog-swiper">
     <h2 class="news-blog__title mb-4">Новинки</h2>
-    <Swiper :space-between="20" :loop="true" :pagination="true" :autoplay="{
+    <Swiper :space-between="20" :slides-per-view="4" :loop="true" :pagination="true" :show="4" :autoplay="{
       delay: 3000,
       disableOnInteraction: false,
       pauseOnMouseEnter: true
     }">
       <Swiper-slide v-for="newProduct in newProducts" :key="newProduct.id">
-        <router-link to="/">
-          <div class="w-[330px] p-4 bg-white rounded cursor-pointer">
+        <router-link class="flex gap-5" to="/">
+          <div class="w-[330px] h-[564px] flex flex-col justify-between p-4 bg-white rounded cursor-pointer">
             <img class="mb-4 w-[298px] h-[250px] bg-slate-300" :src="newProduct.img" :alt="newProduct.id">
-            <div class="product-info flex flex-col gap-4">
+            <div class="product-info flex flex-col gap-3">
               <h2 class="product-info__title">{{ newProduct.title }}</h2>
               <div class="product-info__review flex gap-4">
                 <p class="flex gap-1">
@@ -103,6 +153,7 @@ const newProducts = ref([
         color: #212121;
         font-size: 30px;
         font-weight: 500;
+        margin-bottom: 16px;
 
         span {
           display: block;
@@ -110,7 +161,6 @@ const newProducts = ref([
           font-size: 22px;
           font-weight: 450;
           text-decoration-line: line-through;
-          margin-bottom: 16px;
         }
       }
     }
