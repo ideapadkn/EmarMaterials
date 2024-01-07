@@ -1,28 +1,32 @@
 <script setup>
 import Feedback from './Feedback.vue';
-import MainSlider from './MainSlider.vue';
+import MainSwiper from './MainSwiper.vue';
+import NewsSwiper from './NewsSwiper.vue';
 </script>
 
 <template>
-  <div class="main flex gap-5">
-    <MainSlider />
-    <div class="flex flex-col gap-5">
-      <div class="check-order rounded">
-        <h3 class="check-order__title">Готов ли ваш заказ?</h3>
-        <p class="check-order__text">А давайте проверим :)</p>
-        <button class="check-order__btn">Посмотреть</button>
-      </div>
-      <div class="eman-studio rounded">
-        <h3 class="eman-studio__title">EMAN STUDIO</h3>
-        <p class="eman-studio__text">ВЫ МОЖЕТЕ ПОДОБРАТЬ ЦВЕТА ДЛЯ ВАШЕГО
-          ИНТЕРЬЕРА НЕ ВЫХОДЯ ИЗ ДОМА!</p>
-        <button class="eman-studio__btn flex items-center text-center ">Открыть
-          <img src="../assets/img/icons/arrow-right.svg" alt="arrow">
-        </button>
+  <div>
+    <div class="main flex gap-5 mb-10">
+      <MainSwiper />
+      <div class="flex flex-col gap-5">
+        <div class="check-order rounded">
+          <h3 class="check-order__title">Готов ли ваш заказ?</h3>
+          <p class="check-order__text">А давайте проверим :)</p>
+          <button class="check-order__btn">Посмотреть</button>
+        </div>
+        <div class="eman-studio rounded">
+          <h3 class="eman-studio__title">EMAN STUDIO</h3>
+          <p class="eman-studio__text">ВЫ МОЖЕТЕ ПОДОБРАТЬ ЦВЕТА ДЛЯ ВАШЕГО
+            ИНТЕРЬЕРА НЕ ВЫХОДЯ ИЗ ДОМА!</p>
+          <button class="eman-studio__btn flex items-center text-center ">Открыть
+            <img src="../assets/img/icons/arrow-right.svg" alt="arrow">
+          </button>
+        </div>
       </div>
     </div>
+    <Feedback />
+    <NewsSwiper />
   </div>
-  <Feedback />
 </template>
 
 <style lang="scss" scoped>
