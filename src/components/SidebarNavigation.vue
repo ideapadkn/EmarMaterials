@@ -1,92 +1,82 @@
 <script setup>
+import { ref } from 'vue';
 
+const navigations = ref([
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Плитные материалы',
+    id: 1,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Мебельная фурнитура',
+    id: 2,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Столешницы и стенпанели',
+    id: 3,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Фасады',
+    id: 4,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Дверные и гардеробные системы',
+    id: 5,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Мебель',
+    id: 6,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Освещение для мебели',
+    id: 7,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Бытовая техника',
+    id: 8,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Изделия из камня',
+    id: 9,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Изделия из метала',
+    id: 10,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Напольные покрытия',
+    id: 11,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Инструменты и расходные материалы',
+    id: 12,
+  },
+  {
+    icon: '../assets/img/icons/square.svg',
+    title: 'Производственные услуги',
+    id: 13,
+  },
+])
 </script>
 
 <template>
-  <div class="navigation-menu bg-white rounded-md w-[360px] p-4 mt-6">
+  <div class="navigation-menu bg-white rounded-md w-[360px] p-4">
     <ul class="flex flex-col gap-6">
-      <li>
+      <li v-for="navigation in navigations" :key="navigation.id">
         <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/square.svg" alt="square">
-          Плитные материалы
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/case.svg" alt="case">
-          Мебельная фурнитура
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/floor.svg" alt="floor">
-          Столешницы и стенпанели
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/brick.svg" alt="brick">
-          Фасады
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/wardrobe.svg" alt="wardrobe">
-          Дверные и гардеробные системы
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/mirror.svg" alt="mirror">
-          Стекло и зеркало
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/furniture.svg" alt="furniture">
-          Мебель
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/desk-lamp.svg" alt="desk-lamp">
-          Освещение для мебели
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/appliance.svg" alt="appliance">
-          Бытовая техника
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/stone.svg" alt="stone">
-          Изделия из камня
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/metal.svg" alt="metal">
-          Изделия из метала
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/parquet.svg" alt="parquet">
-          Напольные покрытия
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/tools.svg" alt="tools">
-          Инструменты и расходные материалы
-        </router-link>
-      </li>
-      <li>
-        <router-link class="flex items-center gap-3" to="/">
-          <img src="../assets/img/icons/manufacturing.svg" alt="manufactoring">
-          Производственные услуги
+          <img :src="navigation.icon" :alt="navigation.id">
+          {{ navigation.title }}
         </router-link>
       </li>
     </ul>

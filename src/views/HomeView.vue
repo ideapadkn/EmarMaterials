@@ -7,11 +7,17 @@ import MainContent from '@/components/MainContent.vue';
 <template>
   <div class="main">
     <Navbar />
-    <div class="">
+    <div class="main-container flex gap-5">
       <Sidebar />
       <MainContent />
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main {
+  &-container {
+    margin-top: 24px;
+  }
+}
+</style>

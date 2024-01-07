@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router';
 
 <template>
   <div class="navbar">
-    <nav class="navbar-header bg-[#323436] w-full mb-10">
+    <nav class="navbar-header bg-[#323436] w-full">
       <div class="main-container flex justify-between">
         <div class="flex gap-8 items-center">
           <p class="nav-text">
@@ -44,7 +44,7 @@ import { RouterLink } from 'vue-router';
         </div>
       </div>
     </nav>
-    <div class="navbar-main bg-white p-[27px] mt-[-40px]">
+    <div class="navbar-main bg-white p-[27px]">
       <div class="main-container flex gap-[60px] items-center">
         <div class="logo">
           <img src="../assets/img/logo.png" alt="logo">
@@ -116,6 +116,10 @@ import { RouterLink } from 'vue-router';
 
     .navbar-menu {
       ul {
+        @media (max-width: 1645px) {
+          gap: 0 10px;
+        }
+
         .menu-text {
           color: #FFF;
           font-size: 20px;
@@ -128,66 +132,72 @@ import { RouterLink } from 'vue-router';
   }
 
   &-main {
-    .search {
-      .catalog-btn {
-        padding: 14px 32px;
-        color: #FFF;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 450;
-        line-height: normal;
-        transition: all .4s;
+    .main-container {
+      @media (max-width: 1645px) {
+        gap: 0 30px;
       }
 
-      &-block {
-        position: relative;
-
-        .search-input {
-          color: #C1C1C1;
-          font-size: 22px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: normal;
-          border-radius: 4px;
-          border: 1px solid #E1E1E1;
-          width: 579px;
-          padding: 20px 0px 20px 40px;
-          height: 56px;
-
-          &:focus {
-            color: #212121;
-          }
-        }
-
-        .search-icon {
-          position: absolute;
-          top: 15px;
-          left: 10px;
-        }
-
-        .search-btn {
-          padding: 10px 22px;
+      .search {
+        .catalog-btn {
+          padding: 14px 32px;
           color: #FFF;
           font-size: 22px;
           font-style: normal;
           font-weight: 450;
           line-height: normal;
-          position: absolute;
-          right: 5px;
-          top: 3.3px;
           transition: all .4s;
         }
-      }
-    }
 
-    .main-menu {
-      ul {
-        li {
-          color: #212121;
-          font-size: 20px;
-          font-style: normal;
-          font-weight: 450;
-          line-height: normal;
+        &-block {
+          position: relative;
+
+          .search-input {
+            color: #C1C1C1;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border-radius: 4px;
+            border: 1px solid #E1E1E1;
+            width: 579px;
+            padding: 20px 0px 20px 40px;
+            height: 56px;
+
+            &:focus {
+              color: #212121;
+            }
+          }
+
+          .search-icon {
+            position: absolute;
+            top: 15px;
+            left: 10px;
+          }
+
+          .search-btn {
+            padding: 10px 22px;
+            color: #FFF;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: normal;
+            position: absolute;
+            right: 5px;
+            top: 3.3px;
+            transition: all .4s;
+          }
+        }
+      }
+
+      .main-menu {
+        ul {
+          li {
+            color: #212121;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 450;
+            line-height: normal;
+          }
         }
       }
     }

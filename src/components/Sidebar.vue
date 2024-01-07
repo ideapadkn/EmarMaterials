@@ -1,10 +1,10 @@
 <script setup>
-import Sale from './Sale.vue';
+import Sale from './SidebarSale.vue';
 import SidebarNavigation from './SidebarNavigation.vue';
 </script>
 
 <template>
-  <div class="main-container">
+  <div class="">
     <div>
       <SidebarNavigation />
       <Sale />
